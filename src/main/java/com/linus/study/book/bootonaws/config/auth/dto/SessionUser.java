@@ -1,8 +1,19 @@
 package com.linus.study.book.bootonaws.config.auth.dto;
 
 import com.linus.study.book.bootonaws.domain.user.User;
+import lombok.Getter;
 
-public class SessionUser {
+import java.io.Serializable;
+
+@Getter
+public class SessionUser implements Serializable {
+    private String name;
+    private String email;
+    private String picture;
+
     public SessionUser(User user) {
+        this.name = user.getName();
+        this.email = user.getEmail();
+        this.picture = user.getPicture();
     }
 }
